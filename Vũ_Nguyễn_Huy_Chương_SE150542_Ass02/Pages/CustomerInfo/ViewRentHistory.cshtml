@@ -1,0 +1,50 @@
+﻿@page
+@model Vũ_Nguyễn_Huy_Chương_SE150542_Ass02.Pages.CustomerInfo.ViewRentHistoryModel
+
+@{
+    ViewData["Title"] = "ViewRentHistory";
+}
+
+<h1>ViewRentHistory</h1>
+
+<h4>CarRental</h4>
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CarRental[0].RentPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarRental[0].Car)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarRental[0].Customer)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CarRental)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RentPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Car.CarId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.CustomerId)
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+</table>
+
+
+<div>
+    <a asp-page="./Details">Back </a>
+</div>

@@ -1,0 +1,49 @@
+﻿@page
+@model Vũ_Nguyễn_Huy_Chương_SE150542_Ass02.Pages.CarProducers.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CarProducer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CarProducer.ProducerId" class="control-label"></label>
+                <input asp-for="CarProducer.ProducerId" class="form-control" />
+                <span asp-validation-for="CarProducer.ProducerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarProducer.ProcuderName" class="control-label"></label>
+                <input asp-for="CarProducer.ProcuderName" class="form-control" />
+                <span asp-validation-for="CarProducer.ProcuderName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarProducer.Address" class="control-label"></label>
+                <input asp-for="CarProducer.Address" class="form-control" />
+                <span asp-validation-for="CarProducer.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarProducer.Country" class="control-label"></label>
+                <input asp-for="CarProducer.Country" class="form-control" />
+                <span asp-validation-for="CarProducer.Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

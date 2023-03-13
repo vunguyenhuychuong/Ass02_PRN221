@@ -1,0 +1,48 @@
+﻿@page
+@model Vũ_Nguyễn_Huy_Chương_SE150542_Ass02.Pages.CarProducers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CarProducer[0].ProcuderName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarProducer[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarProducer[0].Country)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CarProducer) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProcuderName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ProducerId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ProducerId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ProducerId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

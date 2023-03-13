@@ -1,0 +1,56 @@
+﻿@page
+@model Vũ_Nguyễn_Huy_Chương_SE150542_Ass02.Pages.StaffAcc.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+    <a asp-page="../Login">Log out</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StaffAccount[0].FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StaffAccount[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StaffAccount[0].Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StaffAccount[0].Role)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.StaffAccount) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.StaffId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.StaffId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.StaffId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
